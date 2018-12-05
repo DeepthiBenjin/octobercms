@@ -1,0 +1,31 @@
+fields:
+    name:
+        label: Title
+        span: full
+        type: text
+    sub_header:
+        label: 'Sub Header'
+        span: full
+        type: text
+    description:
+        label: Description
+        size: ''
+        span: full
+        type: richeditor
+    source:
+        label: Source
+        span: full
+        type: text
+    publication:
+        label: Publication(Year)
+        span: full
+        type: text
+    featuredimage:
+        label: 'Featured Image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

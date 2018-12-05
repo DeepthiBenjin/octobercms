@@ -1,0 +1,12 @@
+list: $/deepthibenjin/media/models/media/columns.yaml
+modelClass: DeepthiBenjin\Media\Models\Media
+title: Media
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'deepthibenjin/media/media/update/:id'

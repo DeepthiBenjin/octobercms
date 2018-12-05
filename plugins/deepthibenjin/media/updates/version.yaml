@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table deepthibenjin_media_'
+    - builder_table_create_deepthibenjin_media_.php
+1.0.3:
+    - 'Updated table deepthibenjin_media_'
+    - builder_table_update_deepthibenjin_media_.php

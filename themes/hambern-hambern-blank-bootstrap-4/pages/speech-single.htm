@@ -1,0 +1,23 @@
+title = "Speech Single"
+url = "/speech/:id"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "DeepthiBenjin\Speaking\Models\Speaking"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+   <h3> {{ record.name }}</h3>
+   <p> {{ record.description }}</p>
+    
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

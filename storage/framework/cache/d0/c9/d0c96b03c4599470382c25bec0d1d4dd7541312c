@@ -1,0 +1,234 @@
+1544001571a:1:{s:12:"speaking.htm";a:11:{s:8:"fileName";s:12:"speaking.htm";s:7:"content";s:4789:"title = "Speaking"
+url = "/speaking"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "DeepthiBenjin\Speaking\Models\Speaking"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "speech-single"
+detailsKeyColumn = "id"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[quotes]
+interval = 3000
+pause = 1
+jquery = "maxcdn"
+bootstrap = "maxcdn"
+fa = "maxcdn"
+==
+<div class="text-bio et_pb_text_align_left">
+<h1> Speaking</h1>
+<p>Dr. Kälin is a highly sought-after speaker and regularly participates in international conferences and events. Below is a selection of his recent speeches, available for download.</p>
+</div>
+<div class="row">
+	<div class="col-md-8">
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+
+    {% for record in records %}
+       
+           {# Use spaceless tag to remove spaces inside the A tag. #}
+            {% spaceless %}
+                {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+                <table border="0">
+                 <tr>
+                 <td><img src="{{record.poster.thumb(234,134) }}"></td>
+                <td><h3>{{ record.name }}</h3><br>{{ html_limit(record.description,100)|raw }}</td>
+            </tr>    
+</table>
+                {% if detailsPage %}
+                    </a>
+                {% endif %}
+            {% endspaceless %}
+        
+    {% else %}
+     {{ noRecordsMessage }}
+    {% endfor %}
+
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
+</div>
+	<div class="col-md-4">
+	<table>
+	<tr><td><img src="storage/app/media/Chris-Kalin.jpg" style="max-width: 100%; height: auto;"></img></td></tr>
+	<tr><td><h4>Dr. Christian H. Kälin</h4></td></tr>
+	<tr><td><p>Dr. Christian H. Kälin, TEP, IMCM, Chairman of Henley & Partners, is considered one of the world’s foremost experts in investment migration and citizenship-by-investment, a field he pioneered.</p></td></tr>
+	</table>
+</div>
+<div class="text-bio et_pb_text_align_left">
+<h1>Quotes</h1>
+<hr class="page_sep">
+<p>Through Dr. Kälin’s many publications and speeches, he has also stated some relevant thoughts and views on citizenship and other related topics, and has been frequently quoted.
+The following is a selection of his quotes.</p>
+<div class="">
+
+    <div class='row'>
+        <div class='col-md-offset-1 col-md-12'>
+            <div class="" data-ride="carousel" >
+
+              
+                <div >
+                {% for row in quotes.quotes %}
+                    <div >
+                        <blockquote>
+                            <div class="row">
+                            {% if row.image %}
+                                <div class="col-sm-3 text-center">
+                                    <img class="img-circle" src="{{ row.image|media }}" style="width: 100px;height:100px;">
+                                </div>
+                            {% endif %}
+                                <div class="{{ (row.image == '') ? 'col-sm-offset-1 col-sm-10' : 'col-sm-9' }}">
+                                    <p>{{ row.quote }}</p>
+                                {% if row.author %}
+                                    <small>
+                                    <p>~{{ row.author }},{{ row.link }}
+                                    </small>
+                                {% endif %}
+                                </div>
+                            </div>
+                        </blockquote>
+                    </div>
+                {% endfor %}
+                </div>
+
+               
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>";s:5:"mtime";i:1543388038;s:6:"markup";s:4326:"<div class="text-bio et_pb_text_align_left">
+<h1> Speaking</h1>
+<p>Dr. Kälin is a highly sought-after speaker and regularly participates in international conferences and events. Below is a selection of his recent speeches, available for download.</p>
+</div>
+<div class="row">
+	<div class="col-md-8">
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+
+    {% for record in records %}
+       
+           {# Use spaceless tag to remove spaces inside the A tag. #}
+            {% spaceless %}
+                {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+                <table border="0">
+                 <tr>
+                 <td><img src="{{record.poster.thumb(234,134) }}"></td>
+                <td><h3>{{ record.name }}</h3><br>{{ html_limit(record.description,100)|raw }}</td>
+            </tr>    
+</table>
+                {% if detailsPage %}
+                    </a>
+                {% endif %}
+            {% endspaceless %}
+        
+    {% else %}
+     {{ noRecordsMessage }}
+    {% endfor %}
+
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
+</div>
+	<div class="col-md-4">
+	<table>
+	<tr><td><img src="storage/app/media/Chris-Kalin.jpg" style="max-width: 100%; height: auto;"></img></td></tr>
+	<tr><td><h4>Dr. Christian H. Kälin</h4></td></tr>
+	<tr><td><p>Dr. Christian H. Kälin, TEP, IMCM, Chairman of Henley & Partners, is considered one of the world’s foremost experts in investment migration and citizenship-by-investment, a field he pioneered.</p></td></tr>
+	</table>
+</div>
+<div class="text-bio et_pb_text_align_left">
+<h1>Quotes</h1>
+<hr class="page_sep">
+<p>Through Dr. Kälin’s many publications and speeches, he has also stated some relevant thoughts and views on citizenship and other related topics, and has been frequently quoted.
+The following is a selection of his quotes.</p>
+<div class="">
+
+    <div class='row'>
+        <div class='col-md-offset-1 col-md-12'>
+            <div class="" data-ride="carousel" >
+
+              
+                <div >
+                {% for row in quotes.quotes %}
+                    <div >
+                        <blockquote>
+                            <div class="row">
+                            {% if row.image %}
+                                <div class="col-sm-3 text-center">
+                                    <img class="img-circle" src="{{ row.image|media }}" style="width: 100px;height:100px;">
+                                </div>
+                            {% endif %}
+                                <div class="{{ (row.image == '') ? 'col-sm-offset-1 col-sm-10' : 'col-sm-9' }}">
+                                    <p>{{ row.quote }}</p>
+                                {% if row.author %}
+                                    <small>
+                                    <p>~{{ row.author }},{{ row.link }}
+                                    </small>
+                                {% endif %}
+                                </div>
+                            </div>
+                        </blockquote>
+                    </div>
+                {% endfor %}
+                </div>
+
+               
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>";s:4:"code";N;s:5:"title";s:8:"Speaking";s:3:"url";s:9:"/speaking";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:9:{s:10:"modelClass";s:38:"DeepthiBenjin\Speaking\Models\Speaking";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:4:"name";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:13:"speech-single";s:16:"detailsKeyColumn";s:2:"id";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}s:6:"quotes";a:5:{s:8:"interval";s:4:"3000";s:5:"pause";s:1:"1";s:6:"jquery";s:6:"maxcdn";s:9:"bootstrap";s:6:"maxcdn";s:2:"fa";s:6:"maxcdn";}}}

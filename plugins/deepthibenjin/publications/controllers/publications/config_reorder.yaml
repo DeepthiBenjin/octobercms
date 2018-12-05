@@ -1,0 +1,4 @@
+title: Publications
+modelClass: DeepthiBenjin\Publications\Models\Publications
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,4 @@
+title: Media
+modelClass: DeepthiBenjin\Media\Models\Media
+toolbar:
+    buttons: reorder_toolbar

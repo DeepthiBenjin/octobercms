@@ -1,0 +1,73 @@
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[advanced]
+idSlider = 1
+height = 610
+autoplay = "true"
+fillmode = 0
+transaction = 0
+autoplayinterval = 4000
+pauseonhover = 1
+arrowkeynavigation = "true"
+slideduration = 800
+mindragoffset = 40
+slidespacing = 0
+dragorientation = 1
+playorientation = 1
+chancetoshow = 2
+autocenter = 1
+orientation = 1
+spacingx = 8
+spacingy = 8
+steps = 1
+lanes = 1
+chancetoshowarrow = 1
+autocenterarrow = 2
+stepsarrow = 1
+
+[quotes]
+interval = 3000
+pause = 0
+random = 0
+jquery = "maxcdn"
+bootstrap = "maxcdn"
+fa = "maxcdn"
+==
+<div class='row'>
+        <div class='col-md-offset-1 col-md-10'>
+            <div class="quote-carousel carousel slide" id="quote-carousel-{{ quotes }}">              
+
+                <div class="carousel-inner">
+                {% for row in quotes.quotes %}
+                    <div class="item {{ (loop.first) ? 'active' : '' }}">
+                        <blockquote>
+                            <div class="row">                         
+                              <p>{{ row.quote }}</p>                            
+                                
+                            </div>
+                        </blockquote>
+                    </div>
+                {% endfor %}
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<div class="home-slider">
+{% component 'advanced' %}
+</div>
+<div class="text-home">
+    <p>Dr. Christian H. Kälin, TEP, IMCM, Chairman of Henley & Partners, is considered one of the world’s foremost experts in investment migration and citizenship-by-investment, a field he pioneered. Holding master’s and PhD degrees in law from the University of Zurich, he is a sought-after speaker and advises governments and international organizations. He is the author, co-author, or editor of many publications, including standard works such as the Global Residence and Citizenship Handbook, Ius Doni: The Acquisition of Citizenship by Investment, the Henley & Partners – Kochenov Quality of Nationality Index, and the Switzerland Business & Investment Handbook.</p><br>
+    <p>
+    The architect of the modern investment migration industry, “Kälin is to citizenship by investment what Henry Ford was to the automobile – he may not have invented it, but he did standardize, popularize, and globalize it.” Dr. Kälin has been named by Bloomberg as the “Passport King” and is also internationally referred to as “Mr. Citizenship”, due to his pioneering role in laying the foundations and leading the industry as well as being one of the academic thought leaders in modern citizenship theory and practice.</p>
+    </div>

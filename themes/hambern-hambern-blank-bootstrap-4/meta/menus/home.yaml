@@ -1,0 +1,20 @@
+name: HOME
+items:
+    -
+        title: Test
+        type: url
+        url: /biography
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: Test1
+                type: header
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'

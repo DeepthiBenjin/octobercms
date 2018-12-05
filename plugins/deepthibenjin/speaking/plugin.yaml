@@ -1,0 +1,11 @@
+plugin:
+    name: 'deepthibenjin.speaking::lang.plugin.name'
+    description: 'deepthibenjin.speaking::lang.plugin.description'
+    author: DeepthiBenjin
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Speaking
+        url: deepthibenjin/speaking/speaking
+        icon: icon-adjust

@@ -1,0 +1,35 @@
+fields:
+    name:
+        label: Title
+        span: full
+        type: text
+    description:
+        label: Description
+        size: ''
+        span: full
+        type: richeditor
+    publication_name:
+        label: 'Publication Name'
+        span: full
+        type: text
+    publication_year:
+        label: 'Publication Year'
+        span: full
+        type: text
+    sub_title:
+        label: 'Sub Header'
+        options:
+            1: Articles
+            2: Videos
+            3: Download
+        span: full
+        type: dropdown
+    featuredimage:
+        label: 'Featured Image'
+        span: full
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

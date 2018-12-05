@@ -1,0 +1,94 @@
+==
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	 <link href="{{ [
+      'assets/vendor/bootstrap/dist/css/bootstrap.min.css',
+      'assets/vendor/font-awesome/css/font-awesome.min.css',
+      'assets/vendor/animate.css/animate.min.css',
+      'assets/vendor/plyr/dist/plyr.css',
+      'assets/css/style.css'
+    ]|theme }}" rel="stylesheet">
+{% scripts%}
+  </head>
+  <body>
+
+    <div class="container-fluid page-container">
+	<div class="row" id="header-container">
+		<div class="col-xs-12 ">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="row menu-header">
+						<div class="col-xs-12" id="top-menu-nav">
+						<ul id="top-menu" class="nav">
+              <li class="nav-item {{ this.page.baseFilename == 'home' ? 'active' }}">
+			  <a class="nav-link" href="{{ 'home'|page}}">HOME</a>
+			  </li>
+			   <li class="nav-item {{ this.page.baseFilename == 'biography' ? 'active' }}">
+			  <a class="nav-link" href="{{ 'biography'|page}}">BIOGRAPHY</a>
+			  </li>
+			   <li class="nav-item {{ this.page.baseFilename == 'speaking' ? 'active' }}">
+			  <a class="nav-link" href="{{ 'speaking'|page}}">SPEAKING</a>
+			  </li>
+			  <li class="nav-item {{ this.page.baseFilename == 'publications' ? 'active' }}">
+			  <a class="nav-link" href="{{ 'publications'|page}}">PUBLICATIONS</a>
+			  </li>
+			  <li class="nav-item {{ this.page.baseFilename == 'media' ? 'active' }}">
+			  <a class="nav-link" href="{{ 'media'|page}}">MEDIA</a>
+			  </li>
+			  <li class="nav-item {{ this.page.baseFilename == 'philanthrophy' ? 'active' }}">
+			  <a class="nav-link" href="{{ 'philanthrophy'|page}}">PHILANTHROPY</a>
+			  </li>
+			  <li class="nav-item {{ this.page.baseFilename == 'gallery' ? 'active' }}">
+			  <a class="nav-link" href="{{ 'gallery'|page}}">GALLERY</a>
+			  </li>
+			  <li class="nav-item {{ this.page.baseFilename == 'link' ? 'active' }}">
+			  <a class="nav-link" href="{{ 'link'|page}}">LINKS</a>
+			  </li>
+			  <li class="nav-item {{ this.page.baseFilename == 'contact' ? 'active' }}">
+			  <a class="nav-link" href="{{ 'contact'|page}}">CONTACT</a>
+			  </li>
+  </ul>
+						</div>
+					</div>
+					
+					
+
+					<div class="row" id="sub-header">
+						<div class="col-xs-12 main_heading">
+						   <h1 style="text-align: center; font-size: 20px;">Dr. Christian H. Kälin</h1>
+    <p style="text-align: center;">Investment Migration Pioneer, Legal Scholar, Author and Editor, Advisor to Governments, Philanthropist, Global Citizen</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row home-main">
+				<div class="col-xs-12">
+				<section id="page" class="container m-b-6">
+               {% page %}
+              </section>
+				</div>
+			</div>
+			<div class="row home-main">
+				<div class="col-xs-12">
+					<section id="page" class="container m-b-6">
+				{% partial 'bottom' %}
+				</section>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

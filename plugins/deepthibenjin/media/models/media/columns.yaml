@@ -1,0 +1,4 @@
+columns:
+    name:
+        label: 'deepthibenjin.media::lang.plugin.name'
+        type: text

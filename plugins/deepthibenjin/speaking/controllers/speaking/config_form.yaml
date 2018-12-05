@@ -1,0 +1,10 @@
+name: Speaking
+form: $/deepthibenjin/speaking/models/speaking/fields.yaml
+modelClass: DeepthiBenjin\Speaking\Models\Speaking
+defaultRedirect: deepthibenjin/speaking/speaking
+create:
+    redirect: 'deepthibenjin/speaking/speaking/update/:id'
+    redirectClose: deepthibenjin/speaking/speaking
+update:
+    redirect: deepthibenjin/speaking/speaking
+    redirectClose: deepthibenjin/speaking/speaking

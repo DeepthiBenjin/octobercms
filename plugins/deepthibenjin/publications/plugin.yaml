@@ -1,0 +1,11 @@
+plugin:
+    name: 'deepthibenjin.publications::lang.plugin.name'
+    description: 'deepthibenjin.publications::lang.plugin.description'
+    author: DeepthiBenjin
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Publications
+        url: deepthibenjin/publications/publications
+        icon: icon-life-ring

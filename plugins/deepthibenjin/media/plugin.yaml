@@ -1,0 +1,11 @@
+plugin:
+    name: 'deepthibenjin.media::lang.plugin.name'
+    description: 'deepthibenjin.media::lang.plugin.description'
+    author: DeepthiBenjin
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    media:
+        label: 'deepthibenjin.media::lang.plugin.name'
+        url: deepthibenjin/media/media
+        icon: icon-life-ring

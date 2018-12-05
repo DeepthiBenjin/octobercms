@@ -1,0 +1,10 @@
+name: Media
+form: $/deepthibenjin/media/models/media/fields.yaml
+modelClass: DeepthiBenjin\Media\Models\Media
+defaultRedirect: deepthibenjin/media/media
+create:
+    redirect: 'deepthibenjin/media/media/update/:id'
+    redirectClose: deepthibenjin/media/media
+update:
+    redirect: deepthibenjin/media/media
+    redirectClose: deepthibenjin/media/media

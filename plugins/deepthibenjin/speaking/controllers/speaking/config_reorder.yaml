@@ -1,0 +1,4 @@
+title: Speaking
+modelClass: DeepthiBenjin\Speaking\Models\Speaking
+toolbar:
+    buttons: reorder_toolbar

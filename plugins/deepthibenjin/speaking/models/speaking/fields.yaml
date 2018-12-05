@@ -1,0 +1,23 @@
+fields:
+    name:
+        label: 'Enter New Speech'
+        span: full
+        placeholder: 'Enter Title Here'
+        required: 1
+        type: text
+    description:
+        label: 'Rich editor'
+        size: ''
+        span: full
+        type: richeditor
+    poster:
+        label: 'Featured Image'
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '100'
+        imageHeight: '100'
+        type: fileupload

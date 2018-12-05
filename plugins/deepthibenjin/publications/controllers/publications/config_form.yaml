@@ -1,0 +1,10 @@
+name: Publications
+form: $/deepthibenjin/publications/models/publications/fields.yaml
+modelClass: DeepthiBenjin\Publications\Models\Publications
+defaultRedirect: deepthibenjin/publications/publications
+create:
+    redirect: 'deepthibenjin/publications/publications/update/:id'
+    redirectClose: deepthibenjin/publications/publications
+update:
+    redirect: deepthibenjin/publications/publications
+    redirectClose: deepthibenjin/publications/publications

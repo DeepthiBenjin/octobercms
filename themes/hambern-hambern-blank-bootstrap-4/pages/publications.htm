@@ -1,0 +1,81 @@
+title = "Publications"
+url = "/publications"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "DeepthiBenjin\Publications\Models\Publications"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<div class="text-bio et_pb_text_align_left">
+<h1> Selected Publications</h1>
+<p>Dr. Kälin has authored, co-authored and edited several professional and academic books, and is a regular contributor to many periodicals. He is also the Editor-in-Chief of the Global Citizenship Review, a quarterly publication. A selection of his publications is available for download or for viewing below.</p>
+</div>
+
+<div class="row">
+	<div class="col-md-8">
+  {% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+
+    {% for record in records %}
+      
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            {% spaceless %}
+                {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+
+                 <table border="0">
+                 <tr>
+                 <td><img src="{{record.featuredimage.thumb(234,134) }}"></td>
+                <td><h3>{{ record.name }}</h3><br>{{ html_limit(record.description,100)|raw }}</td>
+            </tr>    
+</table>
+
+                {% if detailsPage %}
+                    </a>
+                {% endif %}
+            {% endspaceless %}
+        
+    {% else %}
+        {{ noRecordsMessage }}
+    {% endfor %}
+
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}	
+</div>
+	<div class="col-md-4">
+	<table>
+	<tr><td><img src="storage/app/media/Chris-Kalin.jpg" style="max-width: 100%; height: auto;"></img></td></tr>
+	<tr><td><h4>Dr. Christian H. Kälin</h4></td></tr>
+	<tr><td><p>Dr. Christian H. Kälin, TEP, IMCM, Chairman of Henley & Partners, is considered one of the world’s foremost experts in investment migration and citizenship-by-investment, a field he pioneered.</p></td></tr>
+	</table>
+</div>
+</div>
